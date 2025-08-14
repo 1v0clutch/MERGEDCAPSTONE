@@ -41,27 +41,10 @@ public class SaveController : MonoBehaviour
         }
 
         // ✅ Apply "return from minigame" logic ONLY if last door was completed
-        if (!string.IsNullOrEmpty(MinigameState.CurrentDoorID) &&
-            MinigameState.CompletedDoors.Contains(MinigameState.CurrentDoorID))
-        {
-            playerObj.transform.position = MinigameState.ReturnPosition;
-        }
-
-        // ✅ Open or close each door based on saved completion
-        foreach (Door door in FindObjectsOfType<Door>())
-        {
-            if (MinigameState.CompletedDoors.Contains(door.DoorID))
-            {
-                door.OpenDoor();
-                Debug.Log($"✅ Door '{door.name}' opened from save (ID: {door.DoorID}).");
-            }
-            else
-            {
-                door.CloseDoor();
-            }
-        }
+        
 
         GameState.IsGameInitialized = true;
+        DoorManager.Instance?.InitializeDoorsFromState();
 
         if (!File.Exists(saveLocation))
         {
@@ -82,11 +65,7 @@ public class SaveController : MonoBehaviour
             enemyPositions = new List<Vector3>(),
             questionEnemyPositions = new List<Vector3>(),
             completedDoorIDs = new List<string>(MinigameState.CompletedDoors),
-            lastMinigameDoorID = MinigameState.CurrentDoorID, // NEW FIELD
-            returnPosition = MinigameState.ReturnPosition,
             gemCount = gemCounter.GetGemCount(),
-            minigameCompleted = MinigameState.MinigameCompleted,
-            doorShouldBeOpen = MinigameState.DoorShouldBeOpen
         };
 
         // Save enemy positions
@@ -108,9 +87,6 @@ public class SaveController : MonoBehaviour
         File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData, true));
         Debug.Log("💾 Game Saved.");
 
-        // ✅ Prevent stuck teleport state
-        MinigameState.MinigameCompleted = false;
-        MinigameState.CurrentDoorID = null;
     }
 
     public void LoadGame()
@@ -167,8 +143,7 @@ public class SaveController : MonoBehaviour
 
         // ✅ Restore minigame state
         MinigameState.CompletedDoors = new HashSet<string>(saveData.completedDoorIDs);
-        MinigameState.CurrentDoorID = saveData.lastMinigameDoorID;
-        MinigameState.ReturnPosition = saveData.returnPosition;
+
 
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null)
@@ -194,23 +169,5 @@ public class SaveController : MonoBehaviour
             }
         }
 
-        // ✅ Open or close doors properly
-        foreach (Door door in FindObjectsOfType<Door>())
-        {
-            if (MinigameState.CompletedDoors.Contains(door.DoorID))
-            {
-                door.OpenDoor();
-                Debug.Log($"✅ Door '{door.name}' opened (ID: {door.DoorID}) from save.");
-            }
-            else
-            {
-                door.CloseDoor();
-                Debug.Log($"🔒 Door '{door.name}' closed (ID: {door.DoorID}).");
-            }
-        }
-
-        // ✅ Reset after applying
-        MinigameState.MinigameCompleted = false;
-        MinigameState.CurrentDoorID = null;
     }
 }

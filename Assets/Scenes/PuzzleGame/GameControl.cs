@@ -55,19 +55,9 @@ public class GameControl : MonoBehaviour
 
     private void ExitToLevel(bool won)
     {
-        MinigameState.MinigameCompleted = true;
-        MinigameState.DoorShouldBeOpen = won;
-
-        if (won && !string.IsNullOrEmpty(MinigameState.CurrentDoorID))
-        {
-            if (!MinigameState.CompletedDoors.Contains(MinigameState.CurrentDoorID))
-                MinigameState.CompletedDoors.Add(MinigameState.CurrentDoorID);
-        }
-
-        FindObjectOfType<SaveController3>()?.SaveGame();
-
-        SceneManager.LoadScene("Level 1");
+        DoorManager.Instance.FinishMinigame(won);
     }
+
 
 
 }

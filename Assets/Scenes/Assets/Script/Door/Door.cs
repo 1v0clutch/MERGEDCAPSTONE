@@ -1,41 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class Door : MonoBehaviour
 {
-    [Header("Door Settings")]
-    [Tooltip("Unique ID for this door (used for saving/loading state). Leave blank to auto-generate.")]
     [SerializeField] private string doorID;
-
     public string DoorID => doorID;
-
-    private static HashSet<string> usedIDs = new HashSet<string>();
 
     private void Awake()
     {
-        if (string.IsNullOrEmpty(doorID) || usedIDs.Contains(doorID))
-        {
-            doorID = Guid.NewGuid().ToString();
-            Debug.Log($"🆔 Generated new unique DoorID for '{gameObject.name}': {doorID}");
-        }
-        usedIDs.Add(doorID);
-    }
+        if (string.IsNullOrEmpty(doorID))
+            doorID = System.Guid.NewGuid().ToString();
 
-    public void AssignAsCurrentDoor()
-    {
-        MinigameState.CurrentDoorID = doorID;
-        Debug.Log($"🚪 Current door set to: {doorID}");
+        DoorManager.Instance?.RegisterDoor(this);
     }
 
     public void OpenDoor()
     {
-        gameObject.SetActive(false);
+        // Your animation/disable collider logic here
+        Debug.Log($"✅ Door '{doorID}' opened.");
     }
 
     public void CloseDoor()
     {
-        gameObject.SetActive(true);
+        // Your animation/enable collider logic here
+        Debug.Log($"🔒 Door '{doorID}' closed.");
     }
 }

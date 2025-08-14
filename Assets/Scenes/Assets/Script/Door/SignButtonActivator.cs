@@ -1,62 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI; // For Button
+using System.Collections.Generic;
 
 public class SignButtonActivator : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] private GameObject interactButton; 
-    [SerializeField] private DoorMinigameManager minigameManager;
-
+    [SerializeField] private string signID;
+    [SerializeField] private string linkedDoorID;
+    [SerializeField] private List<string> minigameScenes;
+    [SerializeField] private GameObject interactButton;
     private GameObject player;
 
     private void Start()
     {
+        DoorManager.Instance?.RegisterSign(signID, this);
+        player = GameObject.FindGameObjectWithTag("Player");
         if (interactButton != null)
             interactButton.SetActive(false);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!collision.CompareTag("Player")) return;
-        
-        player = collision.gameObject;
-        minigameManager?.SetPlayer(player);
-
-        // ✅ Dynamically assign button action to THIS door’s manager
-        var button = interactButton.GetComponent<UnityEngine.UI.Button>();
-        if (button != null)
-        {
-            button.onClick.RemoveAllListeners();
-            button.onClick.AddListener(() => OnInteractButtonPressed());
-        }
-
-        interactButton?.SetActive(true);
+        if (other.CompareTag("Player") && interactButton != null)
+            interactButton.SetActive(true);
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        if (!collision.CompareTag("Player")) return;
-
-        player = null;
-        interactButton?.SetActive(false);
+        if (other.CompareTag("Player") && interactButton != null)
+            interactButton.SetActive(false);
     }
 
     public void OnInteractButtonPressed()
     {
-        if (player == null) return;
-
-        if (MinigameState.MinigameCompleted && MinigameState.DoorShouldBeOpen)
-        {
-            Debug.Log("✅ Minigame already completed. Opening door.");
-            minigameManager?.OnMinigameCompleted(true);
-            return;
-        }
-
-        minigameManager?.StartMinigame();
+        DoorManager.Instance.StartMinigameForDoor(linkedDoorID, player, minigameScenes);
     }
 }
-
-
