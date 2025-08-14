@@ -83,7 +83,7 @@ public class SaveController : MonoBehaviour
             lastLessonID = LessonBoardManager.Instance.lastOpenedLessonID,
             enemyPositions = new List<Vector3>()
         };
-
+        saveData.completedDoorIDs = new List<string>(MinigameState.CompletedDoors);
         saveData.minigameCompleted = MinigameState.MinigameCompleted;
         saveData.doorShouldBeOpen = MinigameState.DoorShouldBeOpen;
         saveData.returnPosition = MinigameState.ReturnPosition;
@@ -191,8 +191,8 @@ public class SaveController : MonoBehaviour
         }
 
         gemCounter.SetGemCount(saveData.gemCount);
-
         // ✅ Restore minigame state
+        MinigameState.CompletedDoors = new HashSet<string>(saveData.completedDoorIDs);
         MinigameState.MinigameCompleted = saveData.minigameCompleted;
         MinigameState.DoorShouldBeOpen = saveData.doorShouldBeOpen;
         MinigameState.ReturnPosition = saveData.returnPosition;

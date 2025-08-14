@@ -127,8 +127,15 @@ public class MatchGameManager : MonoBehaviour
         MinigameState.MinigameCompleted = true;
         MinigameState.DoorShouldBeOpen = won;
 
-        // Save return position (from Level 1 scene) — not here
+        if (won && !string.IsNullOrEmpty(MinigameState.CurrentDoorID))
+        {
+            if (!MinigameState.CompletedDoors.Contains(MinigameState.CurrentDoorID))
+                MinigameState.CompletedDoors.Add(MinigameState.CurrentDoorID);
+        }
+
         FindObjectOfType<SaveController2>()?.SaveGame();
+
         SceneManager.LoadScene("Level 1");
     }
+
 }

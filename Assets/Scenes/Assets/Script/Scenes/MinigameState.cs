@@ -4,10 +4,42 @@ using UnityEngine;
 
 public static class MinigameState
 {
-    public static bool MinigameCompleted = false;
-    public static bool DoorShouldBeOpen = false;
+    // New per-door system
+    public static Vector3 ReturnPosition;
+    public static string CurrentDoorID;
+    public static HashSet<string> CompletedDoors = new HashSet<string>();
 
-    public static Vector3 ReturnPosition = Vector3.zero;
-    public static bool HasReturnedFromMinigame => MinigameCompleted;
+    // Backward compatibility for old scripts
+    public static bool MinigameCompleted
+    {
+        get
+        {
+            // Completed if the current door ID is in the set
+            return !string.IsNullOrEmpty(CurrentDoorID) && CompletedDoors.Contains(CurrentDoorID);
+        }
+        set
+        {
+            if (!string.IsNullOrEmpty(CurrentDoorID))
+            {
+                if (value)
+                    CompletedDoors.Add(CurrentDoorID);
+                else
+                    CompletedDoors.Remove(CurrentDoorID);
+            }
+        }
+    }
+
+    public static bool DoorShouldBeOpen
+    {
+        get
+        {
+            // Same as MinigameCompleted for old system
+            return MinigameCompleted;
+        }
+        set
+        {
+            // For compatibility, treat setting DoorShouldBeOpen to true as marking it completed
+            MinigameCompleted = value;
+        }
+    }
 }
-

@@ -1,32 +1,73 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GameControl : MonoBehaviour {
-
-    [SerializeField]
-    private Transform[] pictures;
-
-    [SerializeField]
-    private GameObject winText;
+public class GameControl : MonoBehaviour
+{
+    [SerializeField] private Transform[] pictures;
+    [SerializeField] private GameObject winText;
 
     public static bool youWin;
 
-    void Start() {
+    private void Start()
+    {
         winText.SetActive(false);
         youWin = false;
     }
 
-    void Update() {
-        if (pictures[0].rotation.z == 0 &&
-        pictures[1].rotation.z == 0 &&
-        pictures[2].rotation.z == 0 &&
-        pictures[3].rotation.z == 0 &&
-        pictures[4].rotation.z == 0 &&
-        pictures[5].rotation.z == 0)
+    private void Update()
+    {
+        if (!youWin && AllPicturesAligned())
         {
             youWin = true;
             winText.SetActive(true);
+
+            HandlePuzzleCompleted();
         }
     }
+
+    private bool AllPicturesAligned()
+    {
+        for (int i = 0; i < pictures.Length; i++)
+        {
+            if (!Mathf.Approximately(pictures[i].rotation.eulerAngles.z % 360f, 0f))
+                return false;
+        }
+        return true;
+    }
+
+    private void HandlePuzzleCompleted()
+    {
+        // Mark the minigame state
+        MinigameState.MinigameCompleted = true;
+        MinigameState.DoorShouldBeOpen = true;
+        MinigameState.CompletedDoors.Add(MinigameState.CurrentDoorID);
+
+        // Save using SaveController2 in this scene
+        var saveController = FindObjectOfType<SaveController2>();
+        if (saveController != null)
+        {
+            saveController.SaveGame();
+        }
+
+        // Return to main level
+        ExitToLevel(true);
+    }
+
+    private void ExitToLevel(bool won)
+    {
+        MinigameState.MinigameCompleted = true;
+        MinigameState.DoorShouldBeOpen = won;
+
+        if (won && !string.IsNullOrEmpty(MinigameState.CurrentDoorID))
+        {
+            if (!MinigameState.CompletedDoors.Contains(MinigameState.CurrentDoorID))
+                MinigameState.CompletedDoors.Add(MinigameState.CurrentDoorID);
+        }
+
+        FindObjectOfType<SaveController3>()?.SaveGame();
+
+        SceneManager.LoadScene("Level 1");
+    }
+
+
 }

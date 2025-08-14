@@ -1223,6 +1223,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2752321851596578407, guid: 50d81288e31f1f546ac5649393a252e6, type: 3}
+      propertyPath: doorID
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3622987889781196715, guid: 50d81288e31f1f546ac5649393a252e6, type: 3}
       propertyPath: m_Name
       value: Door
@@ -6326,7 +6330,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minigameScenes:
   - MATCHGAME
-  connectedDoor: {fileID: 0}
+  - PuzzleGame
+  connectedDoor: {fileID: 1316776833}
 --- !u!1 &1047273264
 GameObject:
   m_ObjectHideFlags: 0
@@ -8056,6 +8061,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 346228940074351600, guid: 50d81288e31f1f546ac5649393a252e6, type: 3}
   m_PrefabInstance: {fileID: 236185655}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1316776833 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2752321851596578407, guid: 50d81288e31f1f546ac5649393a252e6, type: 3}
+  m_PrefabInstance: {fileID: 236185655}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd57af6c35e976a41ad86d977e178ca3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1354067332 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 443766901754590544, guid: 4e7801e8c1d685d4a923f1d5191a3862, type: 3}
@@ -8422,6 +8438,10 @@ PrefabInstance:
     - target: {fileID: 346228940074351600, guid: 50d81288e31f1f546ac5649393a252e6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752321851596578407, guid: 50d81288e31f1f546ac5649393a252e6, type: 3}
+      propertyPath: doorID
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3622987889781196715, guid: 50d81288e31f1f546ac5649393a252e6, type: 3}
       propertyPath: m_Name
@@ -88687,11 +88707,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3043341402752724851, guid: a50f9094378b84e4bbd474d4bf46e051, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -405.363
+      value: -406.5
       objectReference: {fileID: 0}
     - target: {fileID: 3043341402752724851, guid: a50f9094378b84e4bbd474d4bf46e051, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -184.986
+      value: -185.5
       objectReference: {fileID: 0}
     - target: {fileID: 3043341402752724851, guid: a50f9094378b84e4bbd474d4bf46e051, type: 3}
       propertyPath: m_LocalPosition.z
