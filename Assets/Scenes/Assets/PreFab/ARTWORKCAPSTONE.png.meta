@@ -1,0 +1,2613 @@
+fileFormatVersion: 2
+guid: 685fc06c12590d748adbc2b98a51aade
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 279
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5fe4198a4e85bb468eb0d94d6735b70
+      internalID: -262183925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_1
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 279
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06c4f2801844b4f4d82b043ea081a9b2
+      internalID: -2029429910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_2
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 279
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bec5d4ac0a3087b4fa4b44ede1eafbb0
+      internalID: 378347682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_3
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 279
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9af01423d89f5244b116ff582c2ef3e
+      internalID: -1720747956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_4
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 279
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9f0d4b5d2f157a4d880a68a9b9b410b
+      internalID: 1078877187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_5
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 279
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f05f4687960672f4e8ae1be801bb144e
+      internalID: 1276258988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_6
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 279
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bb532e97af14bb4685beee88ae10916
+      internalID: -1261731302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_7
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 279
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de3d3126f55764d4ba671ce47d787341
+      internalID: 1241554598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_8
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 279
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bb3022fc56d6ca4caea1cd7728674f8
+      internalID: -2125077600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_9
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 279
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 513aff34b17b8a0489fdd18affde1289
+      internalID: 1006288429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_10
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 279
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfebf4d62f66f9e45a5ce9d016e9f76b
+      internalID: 1716282045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_11
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 279
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65445f25165f1bf4e99e59ee114cd6a8
+      internalID: -2008117800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_12
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 279
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9770b31cb336a3e4f8782fcb41212252
+      internalID: 1690260321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_13
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 279
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e12eae92e590d7940907cd0cd3a5b470
+      internalID: 286288501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_14
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 279
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fff8dae4bd7b9747bb28c0c16b35c02
+      internalID: -1992536082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_15
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 262
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8159fa8182811c45a26df94e9c4298a
+      internalID: 636669448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_16
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 262
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5ef9f952fbb80843851683693328b88
+      internalID: -1705669957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_17
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 262
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ead278b924f6b741a03f8f7a59caa12
+      internalID: -1586660642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_18
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 262
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32d3c1ed347df6544bc011fa3bb18d0c
+      internalID: -232699085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_19
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 262
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2468555ad7118aa4b97dfa1001c7cf90
+      internalID: -243441296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_20
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 262
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b382f10e9b755743a6bfc35b9df6b7e
+      internalID: 677483142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_21
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 262
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34fed5c8a24e33942a66b1c14d444eae
+      internalID: -1807949413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_22
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 262
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9580450fcbaa0d45a76451d04e03727
+      internalID: 424250768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_23
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 262
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fffc84a9c420c34b9902f03da1a8641
+      internalID: 176072020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_24
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 262
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c5d4aba52be9c547b53634f3afd9066
+      internalID: -1513775830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_25
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 262
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a21faeea3083ff4daef4c0913c662a8
+      internalID: 1620155214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_26
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 262
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe279aa55d9d3ff4c882e78c488d0159
+      internalID: -1155400882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_27
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 262
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a105979b4323aeb408fa0f74afa9932f
+      internalID: -1695004116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_28
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 262
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a745403da4a1c14c9408f94fd625c5c
+      internalID: -1517327084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_29
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 262
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 440f9cb5490133f48b59e6208c3764c3
+      internalID: 1944534064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_30
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 262
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f5e8934bcc2e9e4ca0001eec30027ab
+      internalID: 1209394885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_31
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 245
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b689d90ef4f4ac4c96d85362f5061a3
+      internalID: -1393332130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_32
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 245
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72e5a81f49936e143972cb492ffbcf8b
+      internalID: 1273141122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_33
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 245
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4db7021550ab1d042a4fdf41b7af3ca8
+      internalID: -434399016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_34
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 245
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f00aaaf588509e94c864d385ed1410dd
+      internalID: 1032011833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_35
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 245
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfa122f115648eb4ba2e880cd016713a
+      internalID: 1621335700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_36
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 245
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b21f087e89330ce428fc0fb0f9e2a2dc
+      internalID: 85439274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_37
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 245
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88b372ed6d231824797d60e2a3d837b0
+      internalID: 1853558599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_38
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 245
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ab187cef33f66043a59f1db0e8c0685
+      internalID: 1311526849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_39
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 245
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7c044a978363dd49a5ecf0b37677151
+      internalID: 275055438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_40
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 245
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fc014b8ac3a9384091b9832f29dbee7
+      internalID: 421820065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_41
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 245
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ee8f637f7cb97443902c356862b350e
+      internalID: -2142252990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_42
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 245
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 858b2f0226d23584daedfd5e6801b1db
+      internalID: -1363108107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_43
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 245
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6354333acb1f31b489f87ec6f9a8001e
+      internalID: -1155190267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_44
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 245
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7db12d22460c9164da36a5865391bd2d
+      internalID: 1931753507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_45
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 245
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 223e750a0ff10444a9bb16f85b12d409
+      internalID: 1178321101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_46
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 228
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b33dfabb2d6232a44838a891b74bf312
+      internalID: 802054290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_47
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 228
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39bb361e8ee665d4b93ac04ee36d3b40
+      internalID: -2113887274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_48
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 228
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81ac71ded83cc2e4a8001d0cdcbf824e
+      internalID: -2146620238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_49
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 228
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9405a64ffb4b6704aac99dffabe33141
+      internalID: -1357357774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_50
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 228
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ce228494ef162e4482be1caaf2dda1e
+      internalID: -1603913536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_51
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 228
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff17610e859cfc64f93ea8120721b313
+      internalID: -79457280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_52
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 228
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84a00d61862419d48bf934f1a1db4601
+      internalID: -1909215230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_53
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 228
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67af2b7cc183f9e49a31e9c2ee2f909f
+      internalID: 1597952729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_54
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 228
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b57eb44417a71e4dbbce25cff7cc009
+      internalID: -1868483478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_55
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 228
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b095a4de1e8fcad428f12632c61f3f4f
+      internalID: 925854952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_56
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 228
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3924d9619224c9148b51648db0e36906
+      internalID: 390164973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_57
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 228
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e45e3e34d91a92409c8622faec344c9
+      internalID: -878197733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_58
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 228
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ae39ebd31caa614694c87d28f6eae21
+      internalID: -632878712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_59
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 228
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a73bbb00a87c945890f87be1b6168c
+      internalID: 2108667644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_63
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 211
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72cdc9732fdc3be4db10264e0dcc4a8b
+      internalID: 595891960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_64
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 211
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 102f27cba2fa3b74baf602d3bfe91e9c
+      internalID: -1283506197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_65
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 211
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9e6cde43bf74834790b19b48c2b044b
+      internalID: 229086842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_66
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 211
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5132fcef7979f3458a1ce87ae0de151
+      internalID: 1297023094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_67
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 211
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f574f489376df8c4eb75e1fff495bf74
+      internalID: -156242487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_68
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 211
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce799850a18c763479a3e536798a05aa
+      internalID: 379053810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_69
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 211
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61a7c58bb3b96f343ac8828a79c728ba
+      internalID: 626810957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_70
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 211
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd18a659a0b2b87469e887b19fd266c3
+      internalID: 40973684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_74
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 194
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 089a3918d33e49a48aa12dcf61b2bcc8
+      internalID: -578394517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_75
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 194
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b07b6b703df3ff488381eec3ebf9277
+      internalID: 1573625029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_76
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 194
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f45fa8748e5502e4e9742b75d3e071a3
+      internalID: 558548224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_77
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 194
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a29f5772572e40249b6191f5096aef19
+      internalID: 829365690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_78
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 194
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 865f3a8299c0c3f41ae0370e80572af7
+      internalID: 1050600068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_79
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 194
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 065b12eb3fb3ae94082941e8c997d295
+      internalID: -1691900521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_80
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 194
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69292504ca8b5b4438312edeeaf6315f
+      internalID: 328824411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_81
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 194
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b4afbbabe0e8bd4fa710795820b1b66
+      internalID: 1458699953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_82
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 194
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b44926d64adf21b4f86c9ffccb3499e0
+      internalID: -1394243108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_83
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 194
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61cbf5eb9b4f9704fbc71bc32601d503
+      internalID: 93528342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_87
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 177
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72d211b6065f2e64b94d943f24c72f3f
+      internalID: -1397658058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_88
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 177
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c51caaeaf3a514b4691d5ee4d97800b9
+      internalID: -826260240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_89
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 177
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cec3cf856da99f47a268b55cbebbabb
+      internalID: -1449128847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_90
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 177
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5be7304141361024eb2cd5f215bcaa85
+      internalID: 716066306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_91
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 177
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f6d0f60cf58fab48a2557f74e9e89f3
+      internalID: 1164293155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_92
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 177
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9735900014d1c3449e1f34a34e54428
+      internalID: 632486325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_93
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 177
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f88dcedab5ecc443b78a5fa3c9e8b3d
+      internalID: -342507933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_97
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 160
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c37dee93298416e4aabb09e112b7c9f5
+      internalID: 1373764509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_98
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 160
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1da38ed520a28b48a875a9480e83b6f
+      internalID: -1317719765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_99
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 160
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81cf2d7f6352ca94880d21ab1c34628a
+      internalID: 718935783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_100
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 160
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d35c7c2a988fc347a72d799053847cb
+      internalID: 1494803714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_101
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 160
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f993e7ecad7c6cc4ebced9515faf0f39
+      internalID: 2070261370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_102
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 160
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3548d95f783a7b24788aacd1534b81cd
+      internalID: -92697538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_103
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 160
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a97f864eadc611429ad5e1937e44685
+      internalID: 1654715514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_107
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 143
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09bfd1f4c972a6a46bee447fb859c1b9
+      internalID: 223180905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_108
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 143
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b773d9888ade4f041b087801d26a4265
+      internalID: -1724590721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_109
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 143
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7ad82b0a001e0f458cc7352bc24bc9a
+      internalID: 934236612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_110
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 143
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4f3e91523ad462469f368e60dcd53de
+      internalID: -599917889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_111
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 143
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dbf5a26b08e9dc4c80decfab8710960
+      internalID: 101712806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_112
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 126
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aba6cb28452ab34da6c675d1aa71768
+      internalID: 1038571091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_60
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 211
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cf730951fe06874aa1b2318fdbb53ba
+      internalID: -1820809737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_61
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 211
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6af2c93f9f371a84a9e989bd058a70ad
+      internalID: 1575225645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_62
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 211
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffb654d2834afcd4ea5e0174cbc54b9c
+      internalID: 1536160593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_71
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 194
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7ba7f91c26e16749b00f8e2d0738fad
+      internalID: -852196443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_72
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 194
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7411d40ac94510449b98583d756ad334
+      internalID: -1991687891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_73
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 194
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c555421166315e74a834720bbb3b7c77
+      internalID: 2023106451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_84
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 177
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 975ad86330041d243a12b68c60a69ebf
+      internalID: -1975667729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_85
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 177
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 654570821363f1f4e9b627fb1d04353d
+      internalID: 1902791112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_86
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 177
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91de20b79efcfd94e9a60a1da0ba69b7
+      internalID: -1532601808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_94
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 160
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c3d371fdb91a9e43a0e47ba160e8bdf
+      internalID: -1470487122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_95
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 160
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff7796ed185d61945a5641708829e45c
+      internalID: 1313727275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_96
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 160
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f29d8b6ff97cf4244b4b3d7f5e2d9837
+      internalID: 2143235197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_104
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 143
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6421d433def3f3844999883cc46858e6
+      internalID: -1635930565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_105
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 143
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04db4905a96c39343b20f40134b848c4
+      internalID: -1218147090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARTWORKCAPSTONE_106
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 143
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7f0cf45e7e81104c802fa35fef3a584
+      internalID: 393911970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ARTWORKCAPSTONE_0: -262183925
+      ARTWORKCAPSTONE_1: -2029429910
+      ARTWORKCAPSTONE_10: 1716282045
+      ARTWORKCAPSTONE_100: 1494803714
+      ARTWORKCAPSTONE_101: 2070261370
+      ARTWORKCAPSTONE_102: -92697538
+      ARTWORKCAPSTONE_103: 1654715514
+      ARTWORKCAPSTONE_104: -1635930565
+      ARTWORKCAPSTONE_105: -1218147090
+      ARTWORKCAPSTONE_106: 393911970
+      ARTWORKCAPSTONE_107: 223180905
+      ARTWORKCAPSTONE_108: -1724590721
+      ARTWORKCAPSTONE_109: 934236612
+      ARTWORKCAPSTONE_11: -2008117800
+      ARTWORKCAPSTONE_110: -599917889
+      ARTWORKCAPSTONE_111: 101712806
+      ARTWORKCAPSTONE_112: 1038571091
+      ARTWORKCAPSTONE_12: 1690260321
+      ARTWORKCAPSTONE_13: 286288501
+      ARTWORKCAPSTONE_14: -1992536082
+      ARTWORKCAPSTONE_15: 636669448
+      ARTWORKCAPSTONE_16: -1705669957
+      ARTWORKCAPSTONE_17: -1586660642
+      ARTWORKCAPSTONE_18: -232699085
+      ARTWORKCAPSTONE_19: -243441296
+      ARTWORKCAPSTONE_2: 378347682
+      ARTWORKCAPSTONE_20: 677483142
+      ARTWORKCAPSTONE_21: -1807949413
+      ARTWORKCAPSTONE_22: 424250768
+      ARTWORKCAPSTONE_23: 176072020
+      ARTWORKCAPSTONE_24: -1513775830
+      ARTWORKCAPSTONE_25: 1620155214
+      ARTWORKCAPSTONE_26: -1155400882
+      ARTWORKCAPSTONE_27: -1695004116
+      ARTWORKCAPSTONE_28: -1517327084
+      ARTWORKCAPSTONE_29: 1944534064
+      ARTWORKCAPSTONE_3: -1720747956
+      ARTWORKCAPSTONE_30: 1209394885
+      ARTWORKCAPSTONE_31: -1393332130
+      ARTWORKCAPSTONE_32: 1273141122
+      ARTWORKCAPSTONE_33: -434399016
+      ARTWORKCAPSTONE_34: 1032011833
+      ARTWORKCAPSTONE_35: 1621335700
+      ARTWORKCAPSTONE_36: 85439274
+      ARTWORKCAPSTONE_37: 1853558599
+      ARTWORKCAPSTONE_38: 1311526849
+      ARTWORKCAPSTONE_39: 275055438
+      ARTWORKCAPSTONE_4: 1078877187
+      ARTWORKCAPSTONE_40: 421820065
+      ARTWORKCAPSTONE_41: -2142252990
+      ARTWORKCAPSTONE_42: -1363108107
+      ARTWORKCAPSTONE_43: -1155190267
+      ARTWORKCAPSTONE_44: 1931753507
+      ARTWORKCAPSTONE_45: 1178321101
+      ARTWORKCAPSTONE_46: 802054290
+      ARTWORKCAPSTONE_47: -2113887274
+      ARTWORKCAPSTONE_48: -2146620238
+      ARTWORKCAPSTONE_49: -1357357774
+      ARTWORKCAPSTONE_5: 1276258988
+      ARTWORKCAPSTONE_50: -1603913536
+      ARTWORKCAPSTONE_51: -79457280
+      ARTWORKCAPSTONE_52: -1909215230
+      ARTWORKCAPSTONE_53: 1597952729
+      ARTWORKCAPSTONE_54: -1868483478
+      ARTWORKCAPSTONE_55: 925854952
+      ARTWORKCAPSTONE_56: 390164973
+      ARTWORKCAPSTONE_57: -878197733
+      ARTWORKCAPSTONE_58: -632878712
+      ARTWORKCAPSTONE_59: 2108667644
+      ARTWORKCAPSTONE_6: -1261731302
+      ARTWORKCAPSTONE_60: -1820809737
+      ARTWORKCAPSTONE_61: 1575225645
+      ARTWORKCAPSTONE_62: 1536160593
+      ARTWORKCAPSTONE_63: 595891960
+      ARTWORKCAPSTONE_64: -1283506197
+      ARTWORKCAPSTONE_65: 229086842
+      ARTWORKCAPSTONE_66: 1297023094
+      ARTWORKCAPSTONE_67: -156242487
+      ARTWORKCAPSTONE_68: 379053810
+      ARTWORKCAPSTONE_69: 626810957
+      ARTWORKCAPSTONE_7: 1241554598
+      ARTWORKCAPSTONE_70: 40973684
+      ARTWORKCAPSTONE_71: -852196443
+      ARTWORKCAPSTONE_72: -1991687891
+      ARTWORKCAPSTONE_73: 2023106451
+      ARTWORKCAPSTONE_74: -578394517
+      ARTWORKCAPSTONE_75: 1573625029
+      ARTWORKCAPSTONE_76: 558548224
+      ARTWORKCAPSTONE_77: 829365690
+      ARTWORKCAPSTONE_78: 1050600068
+      ARTWORKCAPSTONE_79: -1691900521
+      ARTWORKCAPSTONE_8: -2125077600
+      ARTWORKCAPSTONE_80: 328824411
+      ARTWORKCAPSTONE_81: 1458699953
+      ARTWORKCAPSTONE_82: -1394243108
+      ARTWORKCAPSTONE_83: 93528342
+      ARTWORKCAPSTONE_84: -1975667729
+      ARTWORKCAPSTONE_85: 1902791112
+      ARTWORKCAPSTONE_86: -1532601808
+      ARTWORKCAPSTONE_87: -1397658058
+      ARTWORKCAPSTONE_88: -826260240
+      ARTWORKCAPSTONE_89: -1449128847
+      ARTWORKCAPSTONE_9: 1006288429
+      ARTWORKCAPSTONE_90: 716066306
+      ARTWORKCAPSTONE_91: 1164293155
+      ARTWORKCAPSTONE_92: 632486325
+      ARTWORKCAPSTONE_93: -342507933
+      ARTWORKCAPSTONE_94: -1470487122
+      ARTWORKCAPSTONE_95: 1313727275
+      ARTWORKCAPSTONE_96: 2143235197
+      ARTWORKCAPSTONE_97: 1373764509
+      ARTWORKCAPSTONE_98: -1317719765
+      ARTWORKCAPSTONE_99: 718935783
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
