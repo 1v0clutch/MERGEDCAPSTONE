@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -8,14 +7,18 @@ public class SaveController : MonoBehaviour
 {
     private string saveLocation;
     private InventoryController inventoryController;
-    public GameObject enemyPrefab; // assign in Inspector
     private GemCounter gemCounter;
-    public GameObject questionEnemyPrefab;
+
+    public GameObject enemyPrefab;         // Assign in Inspector
+    public GameObject questionEnemyPrefab; // Assign in Inspector
+
     void Start()
     {
         saveLocation = Path.Combine(Application.persistentDataPath, "saveData.json");
+
         inventoryController = FindObjectOfType<InventoryController>();
         inventoryController.InitializeInventory();
+
         gemCounter = FindObjectOfType<GemCounter>();
 
         if (File.Exists(saveLocation))
@@ -24,7 +27,6 @@ public class SaveController : MonoBehaviour
         }
         else
         {
-            // Don't save immediately — delay until player is properly initialized
             inventoryController.ClearInventorySlots();
         }
 
@@ -38,38 +40,34 @@ public class SaveController : MonoBehaviour
             }
         }
 
-        // Minigame return logic
-        if (MinigameState.MinigameCompleted)
+        // ✅ Apply "return from minigame" logic ONLY if last door was completed
+        if (!string.IsNullOrEmpty(MinigameState.CurrentDoorID) &&
+            MinigameState.CompletedDoors.Contains(MinigameState.CurrentDoorID))
         {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            if (player != null)
-            {
-                player.transform.position = MinigameState.ReturnPosition;
-                Debug.Log("📍 Returned to position after Minigame: " + MinigameState.ReturnPosition);
-            }
+            playerObj.transform.position = MinigameState.ReturnPosition;
         }
 
-        // Open door if passed
-        if (MinigameState.MinigameCompleted && MinigameState.DoorShouldBeOpen)
+        // ✅ Open or close each door based on saved completion
+        foreach (Door door in FindObjectsOfType<Door>())
         {
-            Door door = FindObjectOfType<Door>();
-            if (door != null)
+            if (MinigameState.CompletedDoors.Contains(door.DoorID))
             {
                 door.OpenDoor();
-                Debug.Log("✅ Door opened from minigame result.");
+                Debug.Log($"✅ Door '{door.name}' opened from save (ID: {door.DoorID}).");
+            }
+            else
+            {
+                door.CloseDoor();
             }
         }
 
-        // ✅ Mark game as initialized
         GameState.IsGameInitialized = true;
 
-        // ✅ Now it's safe to save the initial game state
         if (!File.Exists(saveLocation))
         {
-            SaveGame(); // <-- move this to AFTER init is fully complete
+            SaveGame();
         }
     }
-
 
     public void SaveGame()
     {
@@ -81,41 +79,39 @@ public class SaveController : MonoBehaviour
             completedLessons = LessonBoardManager.Instance.completedLessons.ToList(),
             unlockedLessonIDs = inventoryController.GetUnlockedLessonIDs(),
             lastLessonID = LessonBoardManager.Instance.lastOpenedLessonID,
-            enemyPositions = new List<Vector3>()
+            enemyPositions = new List<Vector3>(),
+            questionEnemyPositions = new List<Vector3>(),
+            completedDoorIDs = new List<string>(MinigameState.CompletedDoors),
+            lastMinigameDoorID = MinigameState.CurrentDoorID, // NEW FIELD
+            returnPosition = MinigameState.ReturnPosition,
+            gemCount = gemCounter.GetGemCount(),
+            minigameCompleted = MinigameState.MinigameCompleted,
+            doorShouldBeOpen = MinigameState.DoorShouldBeOpen
         };
-        saveData.completedDoorIDs = new List<string>(MinigameState.CompletedDoors);
-        saveData.minigameCompleted = MinigameState.MinigameCompleted;
-        saveData.doorShouldBeOpen = MinigameState.DoorShouldBeOpen;
-        saveData.returnPosition = MinigameState.ReturnPosition;
-        saveData.gemCount = gemCounter.GetGemCount();
-        saveData.enemyPositions = new List<Vector3>();
-        saveData.questionEnemyPositions = new List<Vector3>();
 
+        // Save enemy positions
         foreach (Enemy enemy in FindObjectsOfType<Enemy>())
-        {
             saveData.enemyPositions.Add(enemy.transform.position);
-        }
 
         foreach (QuestionEnemy qEnemy in FindObjectsOfType<QuestionEnemy>())
-        {
             saveData.questionEnemyPositions.Add(qEnemy.transform.position);
-        }
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
+
+        // Save player health
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
         {
-            saveData.playerPosition = player.transform.position;
-
-            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
-            PlayerMovement pm = playerObj != null ? playerObj.GetComponent<PlayerMovement>() : null;
-
+            PlayerMovement pm = playerObj.GetComponent<PlayerMovement>();
             if (pm != null)
-            {
-                saveData.playerHealth = Mathf.Max(pm.currentHealth, 1); // never save 0
-            }
+                saveData.playerHealth = Mathf.Max(pm.currentHealth, 1);
         }
-        File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData, true));
-    }
 
+        File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData, true));
+        Debug.Log("💾 Game Saved.");
+
+        // ✅ Prevent stuck teleport state
+        MinigameState.MinigameCompleted = false;
+        MinigameState.CurrentDoorID = null;
+    }
 
     public void LoadGame()
     {
@@ -129,102 +125,92 @@ public class SaveController : MonoBehaviour
         foreach (QuestionEnemy qe in FindObjectsOfType<QuestionEnemy>())
             Destroy(qe.gameObject);
 
-        // Re-instantiate enemies
+        // Respawn enemies from save
         List<GameObject> restoredEnemies = new List<GameObject>();
-        foreach (Vector3 enemyPos in saveData.enemyPositions)
-        {
+        foreach (Vector3 pos in saveData.enemyPositions)
             if (enemyPrefab != null)
-                restoredEnemies.Add(Instantiate(enemyPrefab, enemyPos, Quaternion.identity));
-        }
-        foreach (Vector3 qEnemyPos in saveData.questionEnemyPositions)
-        {
-            if (questionEnemyPrefab != null)
-                restoredEnemies.Add(Instantiate(questionEnemyPrefab, qEnemyPos, Quaternion.identity));
-        }
+                restoredEnemies.Add(Instantiate(enemyPrefab, pos, Quaternion.identity));
 
-        // 3️⃣ Register restored enemies to nearby spawners
+        foreach (Vector3 pos in saveData.questionEnemyPositions)
+            if (questionEnemyPrefab != null)
+                restoredEnemies.Add(Instantiate(questionEnemyPrefab, pos, Quaternion.identity));
+
+        // Register restored enemies to spawners
         foreach (Spawner spawner in FindObjectsOfType<Spawner>())
         {
             foreach (GameObject enemy in restoredEnemies)
             {
                 if (Vector2.Distance(spawner.transform.position, enemy.transform.position) < 15f)
-                {
                     spawner.RegisterExistingEnemy(enemy);
-                }
             }
 
-            // Disable only if it's already full
             if (spawner.AliveEnemyCount >= spawner.maxEnemiesAlive)
             {
                 spawner.enabled = false;
-                Debug.Log($"🛑 Spawner '{spawner.name}' disabled — already full ({spawner.AliveEnemyCount}/{spawner.maxEnemiesAlive})");
+                Debug.Log($"🛑 Spawner '{spawner.name}' disabled — already full.");
             }
         }
 
-        // Assign player data
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
-        {
-            PlayerMovement pm = player.GetComponent<PlayerMovement>();
-
-            if (pm != null)
-            {
-                pm.currentHealth = (saveData.playerHealth <= 0) ? pm.maxHealth : saveData.playerHealth;
-
-                if (pm.healthSlider != null)
-                    pm.healthSlider.value = pm.currentHealth;
-            }
-
-        }
-
-        // Restore other systems
+        // Restore inventory & lessons
         inventoryController.SetInventoryItems(saveData.inventorySaveData);
         LessonBoardManager.Instance.RegisterUnlockedLessons(inventoryController.GetUnlockedLessonIDs());
         LessonBoardManager.Instance.completedLessons = new HashSet<int>(saveData.completedLessons);
         LessonBoardManager.Instance.lastOpenedLessonID = saveData.lastLessonID;
 
-        Item[] worldItems = FindObjectsOfType<Item>();
-        foreach (Item item in worldItems)
-        {
+        // Remove collected world items
+        foreach (Item item in FindObjectsOfType<Item>())
             if (saveData.collectedItemIDs.Contains(item.ID))
                 Destroy(item.gameObject);
-        }
 
+        // Restore gems
         gemCounter.SetGemCount(saveData.gemCount);
+
         // ✅ Restore minigame state
         MinigameState.CompletedDoors = new HashSet<string>(saveData.completedDoorIDs);
-        MinigameState.MinigameCompleted = saveData.minigameCompleted;
-        MinigameState.DoorShouldBeOpen = saveData.doorShouldBeOpen;
+        MinigameState.CurrentDoorID = saveData.lastMinigameDoorID;
         MinigameState.ReturnPosition = saveData.returnPosition;
 
-        // ✅ Set player position (use return position if coming from minigame)
-        if (player != null)
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
         {
-            if (MinigameState.MinigameCompleted)
+            PlayerMovement pm = playerObj.GetComponent<PlayerMovement>();
+            if (pm != null)
             {
-                player.transform.position = MinigameState.ReturnPosition;
-                Debug.Log("📍 Returned to position after Minigame: " + MinigameState.ReturnPosition);
+                pm.currentHealth = (saveData.playerHealth <= 0) ? pm.maxHealth : saveData.playerHealth;
+                if (pm.healthSlider != null)
+                    pm.healthSlider.value = pm.currentHealth;
+            }
+
+            // ✅ Position player correctly
+            if (!string.IsNullOrEmpty(saveData.lastMinigameDoorID) &&
+                saveData.completedDoorIDs.Contains(saveData.lastMinigameDoorID))
+            {
+                playerObj.transform.position = saveData.returnPosition;
+                Debug.Log("📍 Returned to position after minigame.");
             }
             else
             {
-                player.transform.position = saveData.playerPosition;
+                playerObj.transform.position = saveData.playerPosition;
             }
         }
 
-        // ✅ Door state based only on MinigameState
-        Door door = FindObjectOfType<Door>();
-        if (door != null)
+        // ✅ Open or close doors properly
+        foreach (Door door in FindObjectsOfType<Door>())
         {
-            if (MinigameState.DoorShouldBeOpen)
+            if (MinigameState.CompletedDoors.Contains(door.DoorID))
             {
                 door.OpenDoor();
-                Debug.Log("✅ Door opened from Minigame result");
+                Debug.Log($"✅ Door '{door.name}' opened (ID: {door.DoorID}) from save.");
             }
             else
             {
                 door.CloseDoor();
-                Debug.Log("🔒 Door is locked");
+                Debug.Log($"🔒 Door '{door.name}' closed (ID: {door.DoorID}).");
             }
         }
+
+        // ✅ Reset after applying
+        MinigameState.MinigameCompleted = false;
+        MinigameState.CurrentDoorID = null;
     }
 }

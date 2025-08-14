@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI; // For Button
 
 public class SignButtonActivator : MonoBehaviour
 {
@@ -20,18 +21,27 @@ public class SignButtonActivator : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.CompareTag("Player")) return;
+        
         player = collision.gameObject;
         minigameManager?.SetPlayer(player);
-        if (interactButton != null)
-            interactButton.SetActive(true);
+
+        // ✅ Dynamically assign button action to THIS door’s manager
+        var button = interactButton.GetComponent<UnityEngine.UI.Button>();
+        if (button != null)
+        {
+            button.onClick.RemoveAllListeners();
+            button.onClick.AddListener(() => OnInteractButtonPressed());
+        }
+
+        interactButton?.SetActive(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (!collision.CompareTag("Player")) return;
+
         player = null;
-        if (interactButton != null)
-            interactButton.SetActive(false);
+        interactButton?.SetActive(false);
     }
 
     public void OnInteractButtonPressed()
@@ -48,4 +58,5 @@ public class SignButtonActivator : MonoBehaviour
         minigameManager?.StartMinigame();
     }
 }
+
 

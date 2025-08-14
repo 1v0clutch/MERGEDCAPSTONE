@@ -24,13 +24,18 @@ public class SaveController3 : MonoBehaviour
             saveData = new SaveData();
         }
 
-        // Update only minigame-related fields
+        // ✅ Save full per-door completion state
+        saveData.completedDoorIDs = new List<string>(MinigameState.CompletedDoors);
         saveData.minigameCompleted = MinigameState.MinigameCompleted;
         saveData.doorShouldBeOpen = MinigameState.DoorShouldBeOpen;
         saveData.returnPosition = MinigameState.ReturnPosition;
-        saveData.completedDoorIDs = new List<string>(MinigameState.CompletedDoors);
+        saveData.lastMinigameDoorID = MinigameState.CurrentDoorID; // new field
 
         File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData, true));
         Debug.Log("✅ Minigame save merged: " + JsonUtility.ToJson(saveData));
+
+        // ✅ Prevent global state from messing with next door
+        MinigameState.MinigameCompleted = false;
+        MinigameState.CurrentDoorID = null;
     }
 }

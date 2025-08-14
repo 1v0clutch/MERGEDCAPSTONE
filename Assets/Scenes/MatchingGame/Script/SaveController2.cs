@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.IO;
+using System.Collections.Generic;
 
 public class SaveController2 : MonoBehaviour
 {
@@ -16,7 +17,6 @@ public class SaveController2 : MonoBehaviour
 
         if (File.Exists(saveLocation))
         {
-            // Load existing full save
             saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(saveLocation));
         }
         else
@@ -24,13 +24,18 @@ public class SaveController2 : MonoBehaviour
             saveData = new SaveData();
         }
 
-        // ✅ Only update minigame-related fields
+        // ✅ Always save full per-door state
+        saveData.completedDoorIDs = new List<string>(MinigameState.CompletedDoors);
         saveData.minigameCompleted = MinigameState.MinigameCompleted;
         saveData.doorShouldBeOpen = MinigameState.DoorShouldBeOpen;
         saveData.returnPosition = MinigameState.ReturnPosition;
+        saveData.lastMinigameDoorID = MinigameState.CurrentDoorID; // new field you add to SaveData
 
         File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData, true));
         Debug.Log("✅ Minigame save merged with existing data: " + JsonUtility.ToJson(saveData));
+
+        // Reset after save so it doesn't interfere with the next door
+        MinigameState.MinigameCompleted = false;
+        MinigameState.CurrentDoorID = null;
     }
 }
-

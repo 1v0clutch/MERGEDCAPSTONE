@@ -8,6 +8,9 @@ public class DoorMinigameManager : MonoBehaviour
     [Tooltip("List of possible minigame scenes for this door.")]
     [SerializeField] private List<string> minigameScenes;
 
+    [Tooltip("Extra list of Door IDs that this manager will check against.")]
+    [SerializeField] private List<string> validDoorIDs;
+
     [Tooltip("The door this minigame is linked to.")]
     [SerializeField] private Door connectedDoor;
 
@@ -28,8 +31,8 @@ public class DoorMinigameManager : MonoBehaviour
 
         string doorID = connectedDoor.DoorID;
 
-        // ✅ Only open this door if *its* ID is in the completed list
-        if (MinigameState.CompletedDoors.Contains(doorID))
+        // ✅ Only open this door if *this* door's ID is in the valid list AND completed
+        if (validDoorIDs.Contains(doorID) && MinigameState.CompletedDoors.Contains(doorID))
         {
             connectedDoor.OpenDoor();
         }

@@ -1167,6 +1167,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 346228940039558087}
+  - {fileID: 346228938797767932}
   - {fileID: 259607800}
   - {fileID: 882329796}
   - {fileID: 982191680}
@@ -1608,9 +1610,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 346228940039558087}
-  - {fileID: 346228938797767932}
+  m_Children: []
   m_Father: {fileID: 180656310}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &278740132
@@ -6157,6 +6157,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1042342509}
+  - {fileID: 1904917126}
   m_Father: {fileID: 924359361}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1024835665
@@ -6298,6 +6299,8 @@ MonoBehaviour:
   minigameScenes:
   - MATCHGAME
   - PuzzleGame
+  validDoorIDs:
+  - 1
   connectedDoor: {fileID: 2752321851360704080}
 --- !u!1 &1047273264
 GameObject:
@@ -14203,6 +14206,55 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1904917125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1904917126}
+  - component: {fileID: 1904917127}
+  m_Layer: 0
+  m_Name: DoorManager_Door2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1904917126
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904917125}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1009816341}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1904917127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904917125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78fcbafe468155d41a521d113dddf5ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minigameScenes:
+  - PuzzleGame
+  validDoorIDs:
+  - 2
+  connectedDoor: {fileID: 2752321851360704080}
 --- !u!1 &1923527796
 GameObject:
   m_ObjectHideFlags: 0
@@ -85071,11 +85123,11 @@ Transform:
   m_GameObject: {fileID: 3622987888505151655}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.02, y: 0, z: 0}
+  m_LocalPosition: {x: -2.019989, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 259607800}
+  m_Father: {fileID: 180656310}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &346228940039558087
 Transform:
@@ -85090,7 +85142,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 259607800}
+  m_Father: {fileID: 180656310}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &369784239047288308
 GameObject:

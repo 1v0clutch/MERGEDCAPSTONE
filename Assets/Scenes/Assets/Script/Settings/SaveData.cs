@@ -20,6 +20,6 @@ public class SaveData
    public bool minigameCompleted;
    public bool doorShouldBeOpen;
    public Vector3 returnPosition;
-
+   public string lastMinigameDoorID;
    public List<string> completedDoorIDs = new List<string>();
 }
