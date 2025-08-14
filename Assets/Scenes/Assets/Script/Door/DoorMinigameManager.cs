@@ -8,43 +8,30 @@ public class DoorMinigameManager : MonoBehaviour
     [Tooltip("List of possible minigame scenes for this door.")]
     [SerializeField] private List<string> minigameScenes;
 
-    [Tooltip("All doors that this minigame can open.")]
-    [SerializeField] private List<Door> connectedDoors;
+    [Tooltip("The door this minigame is linked to.")]
+    [SerializeField] private Door connectedDoor;
 
     private GameObject player;
-    private Door mainDoor; // The specific door linked to this minigame
 
     private void Awake()
     {
-        if (connectedDoors == null || connectedDoors.Count == 0)
+        if (connectedDoor == null)
         {
-            Debug.LogError($"❌ {name} has no connected doors assigned!");
+            Debug.LogError($"❌ {name} has no connected Door assigned!");
             return;
         }
-
-        // The "main" door for this minigame will be the first in the list
-        mainDoor = connectedDoors[0];
     }
 
     private void Start()
     {
-        if (mainDoor == null) return;
+        if (connectedDoor == null) return;
 
-        string doorID = mainDoor.DoorID;
+        string doorID = connectedDoor.DoorID;
 
-        // Restore state for THIS door only
+        // ✅ Only open this door if *its* ID is in the completed list
         if (MinigameState.CompletedDoors.Contains(doorID))
         {
-            OpenDoorByID(doorID);
-        }
-        else if (!string.IsNullOrEmpty(MinigameState.CurrentDoorID) &&
-                 MinigameState.CurrentDoorID == doorID &&
-                 MinigameState.MinigameCompleted &&
-                 MinigameState.DoorShouldBeOpen)
-        {
-            OpenDoorByID(doorID);
-            if (!MinigameState.CompletedDoors.Contains(doorID))
-                MinigameState.CompletedDoors.Add(doorID);
+            connectedDoor.OpenDoor();
         }
     }
 
@@ -60,14 +47,14 @@ public class DoorMinigameManager : MonoBehaviour
             Debug.LogError("❌ Player reference missing. Cannot start minigame.");
             return;
         }
-        if (mainDoor == null)
+        if (connectedDoor == null)
         {
-            Debug.LogError("❌ No main door assigned for this minigame.");
+            Debug.LogError("❌ No connected door assigned to this manager.");
             return;
         }
 
-        // Assign this door's ID to MinigameState
-        MinigameState.CurrentDoorID = mainDoor.DoorID;
+        // Save this door's ID so we know which one to open
+        MinigameState.CurrentDoorID = connectedDoor.DoorID;
 
         // Save return position
         MinigameState.ReturnPosition = player.transform.position;
@@ -75,6 +62,7 @@ public class DoorMinigameManager : MonoBehaviour
 
         FindObjectOfType<SaveController>()?.SaveGame();
 
+        // Pick a random scene from this door's list
         string chosenScene = GetRandomScene();
         if (string.IsNullOrEmpty(chosenScene))
         {
@@ -93,29 +81,17 @@ public class DoorMinigameManager : MonoBehaviour
 
     public void OnMinigameCompleted(bool won)
     {
-        if (mainDoor == null) return;
+        if (connectedDoor == null) return;
 
         if (won)
         {
-            OpenDoorByID(mainDoor.DoorID);
+            connectedDoor.OpenDoor();
 
-            if (!MinigameState.CompletedDoors.Contains(mainDoor.DoorID))
-                MinigameState.CompletedDoors.Add(mainDoor.DoorID);
+            if (!MinigameState.CompletedDoors.Contains(connectedDoor.DoorID))
+                MinigameState.CompletedDoors.Add(connectedDoor.DoorID);
         }
 
         FindObjectOfType<SaveController2>()?.SaveGame();
         SceneManager.LoadScene("Level 1");
-    }
-
-    /// <summary>
-    /// Opens all connected doors with the matching DoorID.
-    /// </summary>
-    private void OpenDoorByID(string doorID)
-    {
-        foreach (Door door in connectedDoors)
-        {
-            if (door != null && door.DoorID == doorID)
-                door.OpenDoor();
-        }
     }
 }

@@ -11,14 +11,16 @@ public class Door : MonoBehaviour
 
     public string DoorID => doorID;
 
+    private static HashSet<string> usedIDs = new HashSet<string>();
+
     private void Awake()
     {
-        // Auto-generate a GUID if empty
-        if (string.IsNullOrEmpty(doorID))
+        if (string.IsNullOrEmpty(doorID) || usedIDs.Contains(doorID))
         {
             doorID = Guid.NewGuid().ToString();
-            Debug.Log($"🆔 Generated new DoorID for '{gameObject.name}': {doorID}");
+            Debug.Log($"🆔 Generated new unique DoorID for '{gameObject.name}': {doorID}");
         }
+        usedIDs.Add(doorID);
     }
 
     public void AssignAsCurrentDoor()
