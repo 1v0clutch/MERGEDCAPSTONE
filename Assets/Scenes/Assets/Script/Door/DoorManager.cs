@@ -14,10 +14,17 @@ public class DoorManager : MonoBehaviour
         public string minigameScene;
     }
 
+    [Header("Door Data")]
     public List<DoorData> allDoors = new List<DoorData>();
     public string mainLevelSceneName = "Level 1";
 
-    private Dictionary<string, SignButtonActivator> allSigns = new Dictionary<string, SignButtonActivator>();
+    [Header("UI References")]
+    [SerializeField] private GameObject interactButton; // Assign the single UI button here
+
+    // State tracking
+    private string currentSignDoorID;
+    private List<string> currentSignScenes;
+    private GameObject currentPlayer;
 
     private void Awake()
     {
@@ -42,21 +49,37 @@ public class DoorManager : MonoBehaviour
 
     public void RegisterSign(string signID, SignButtonActivator sign)
     {
-        if (!allSigns.ContainsKey(signID))
-        {
-            allSigns.Add(signID, sign);
-        }
+        // Not storing sign refs here for now, just for compatibility
     }
 
-    public void InitializeDoorsFromState()
+    public void SetActiveSign(string doorID, List<string> scenes, GameObject player)
     {
-        foreach (var data in allDoors)
+        currentSignDoorID = doorID;
+        currentSignScenes = scenes;
+        currentPlayer = player;
+    }
+
+    public void ClearActiveSign()
+    {
+        currentSignDoorID = null;
+        currentSignScenes = null;
+        currentPlayer = null;
+    }
+
+    public void ShowInteractButton(bool show)
+    {
+        if (interactButton != null)
+            interactButton.SetActive(show);
+    }
+
+    public void OnInteractButtonPressed()
+    {
+        if (string.IsNullOrEmpty(currentSignDoorID))
         {
-            if (MinigameState.CompletedDoors.Contains(data.doorID))
-                data.doorObject.OpenDoor();
-            else
-                data.doorObject.CloseDoor();
+            Debug.LogWarning("⚠ No active sign to interact with.");
+            return;
         }
+        StartMinigameForDoor(currentSignDoorID, currentPlayer, currentSignScenes);
     }
 
     public void StartMinigameForDoor(string doorID, GameObject player, List<string> scenes)
@@ -94,5 +117,15 @@ public class DoorManager : MonoBehaviour
 
         FindObjectOfType<SaveController>()?.SaveGame();
         SceneManager.LoadScene(mainLevelSceneName);
+    }
+    public void InitializeDoorsFromState()
+    {
+        foreach (var data in allDoors)
+        {
+            if (MinigameState.CompletedDoors.Contains(data.doorID))
+                data.doorObject.OpenDoor();
+            else
+                data.doorObject.CloseDoor();
+        }
     }
 }

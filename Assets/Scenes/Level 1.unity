@@ -442,10 +442,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 335092e468e52e44fbe26202efd7160f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signID: 
-  linkedDoorID: 
-  minigameScenes: []
-  interactButton: {fileID: 930786933}
+  signID: 2
+  linkedDoorID: 2
+  minigameScenes:
+  - PuzzleGame
 --- !u!114 &90065480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2654,10 +2654,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 335092e468e52e44fbe26202efd7160f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signID: 
-  linkedDoorID: 
-  minigameScenes: []
-  interactButton: {fileID: 930786933}
+  signID: 1
+  linkedDoorID: 1
+  minigameScenes:
+  - MATCHGAME
 --- !u!224 &403202302 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 443766901754590544, guid: fcb0dbf115ec1ab4d88a9a8d4184435e, type: 3}
@@ -5432,20 +5432,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 367185977}
-        m_TargetAssemblyTypeName: SignButtonActivator, Assembly-CSharp
-        m_MethodName: OnInteractButtonPressed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 90065479}
-        m_TargetAssemblyTypeName: SignButtonActivator, Assembly-CSharp
+      - m_Target: {fileID: 1009816342}
+        m_TargetAssemblyTypeName: DoorManager, Assembly-CSharp
         m_MethodName: OnInteractButtonPressed
         m_Mode: 1
         m_Arguments:
@@ -6183,6 +6171,7 @@ MonoBehaviour:
     doorObject: {fileID: 2752321852333537643}
     minigameScene: PuzzleGame
   mainLevelSceneName: Level 1
+  interactButton: {fileID: 930786933}
 --- !u!1 &1024835665
 GameObject:
   m_ObjectHideFlags: 0
