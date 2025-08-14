@@ -10,4 +10,4 @@ public class DoorIDDebugger : MonoBehaviour
             Debug.Log($"Door '{door.name}' has ID: {door.DoorID}");
         }
     }
-}
+}//testing for merging
