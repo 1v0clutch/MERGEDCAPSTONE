@@ -13,7 +13,7 @@ public class SaveData
     public List<Vector3> enemyPositions = new();//
     public List<Vector3> questionEnemyPositions = new();//
     public List<string> completedDoorIDs;//
-
+    public int totalPoints;
     public bool minigameCompleted;
     public bool doorShouldBeOpen;
     public string lastMinigameDoorID; //

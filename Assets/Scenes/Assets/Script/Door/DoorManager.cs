@@ -126,7 +126,7 @@ public class DoorManager : MonoBehaviour
         foreach (var data in allDoors)
         {
             if (MinigameState.CompletedDoors.Contains(data.doorID))
-                data.doorObject.OpenDoor();
+                data.doorObject.OpenDoor(false);
             else
                 data.doorObject.CloseDoor();
         }

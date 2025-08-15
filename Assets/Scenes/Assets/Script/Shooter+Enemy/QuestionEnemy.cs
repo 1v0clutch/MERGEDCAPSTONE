@@ -52,6 +52,7 @@ public class QuestionEnemy : MonoBehaviour
 
         if (correct)
         {
+            PointController.Instance?.EnemyKilled(true);
             Destroy(gameObject);
         }
     }

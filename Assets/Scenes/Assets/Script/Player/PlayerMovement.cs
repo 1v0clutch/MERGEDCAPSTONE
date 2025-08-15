@@ -96,6 +96,7 @@ public class PlayerMovement : MonoBehaviour
         if (isDead || !IsInitialized) return;
 
         currentHealth -= dmg;
+        PointController.Instance?.PlayerDamaged();
         if (currentHealth < 0) currentHealth = 0;
 
         if (healthSlider != null)

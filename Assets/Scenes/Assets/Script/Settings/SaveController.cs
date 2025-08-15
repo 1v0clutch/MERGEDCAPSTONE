@@ -15,7 +15,7 @@ public class SaveController : MonoBehaviour
     void Start()
     {
         saveLocation = Path.Combine(Application.persistentDataPath, "saveData.json");
-
+        PointController.Instance.SetTotalPoints(0);
         inventoryController = FindObjectOfType<InventoryController>();
         inventoryController.InitializeInventory();
 
@@ -66,6 +66,7 @@ public class SaveController : MonoBehaviour
             questionEnemyPositions = new List<Vector3>(),
             completedDoorIDs = new List<string>(MinigameState.CompletedDoors),
             gemCount = gemCounter.GetGemCount(),
+            totalPoints = PointController.Instance.TotalPoints
         };
 
         // Save enemy positions
@@ -95,6 +96,7 @@ public class SaveController : MonoBehaviour
 
         SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(saveLocation));
 
+        PointController.Instance.SetTotalPoints(saveData.totalPoints);
         // Destroy existing enemies
         foreach (Enemy e in FindObjectsOfType<Enemy>())
             Destroy(e.gameObject);

@@ -107,6 +107,7 @@ public void TakeDamage(int damageAmount)
     {
         Debug.Log("☠️ Enemy destroyed.");
         //Instantiate(deathEffect, transform.position, Quaternion.identity);
+        PointController.Instance?.EnemyKilled(false);
         Destroy(gameObject);
     }
 }

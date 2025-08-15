@@ -14,6 +14,7 @@ public class PlayerItemCollector : MonoBehaviour
         if (collision.CompareTag("Item"))
         {
             FindObjectOfType<GemCounter>().AddGem();
+            PointController.Instance?.ItemCollected();
             Item item = collision.GetComponent<Item>();
             if (item != null)
             {

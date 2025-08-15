@@ -124,6 +124,7 @@ public class MatchGameManager : MonoBehaviour
     }
     private void ExitToLevel(bool won)
     {
+        
         DoorManager.Instance.FinishMinigame(won);
         FindObjectOfType<SaveController2>()?.SaveGame();
         SceneManager.LoadScene("Level 1");
