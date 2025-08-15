@@ -114,21 +114,34 @@ public class DoorManager : MonoBehaviour
     {
         if (won && !string.IsNullOrEmpty(MinigameState.CurrentDoorID))
         {
-            MinigameState.CompletedDoors.Add(MinigameState.CurrentDoorID);
+            bool isNewDoor = !MinigameState.CompletedDoors.Contains(MinigameState.CurrentDoorID);
+
+            if (isNewDoor)
+            {
+                MinigameState.CompletedDoors.Add(MinigameState.CurrentDoorID); // ✅ mark as completed
+                PointController.Instance?.DoorOpened(); // ✅ award points
+            }
         }
 
         FindObjectOfType<SaveController>()?.SaveGame();
         SceneManager.LoadScene(mainLevelSceneName);
     }
+
+
     public void InitializeDoorsFromState()
     {
         // ✅ Open all doors that have been completed
         foreach (var data in allDoors)
         {
             if (MinigameState.CompletedDoors.Contains(data.doorID))
+            {
+                // Open without giving points when loading from save
                 data.doorObject.OpenDoor(false);
+            }
             else
+            {
                 data.doorObject.CloseDoor();
+            }
         }
     }
 

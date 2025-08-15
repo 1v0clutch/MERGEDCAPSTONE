@@ -16,11 +16,10 @@ public class Door : MonoBehaviour
     public void OpenDoor(bool awardPoints = true)
     {
         gameObject.SetActive(false);
-
         if (awardPoints)
             PointController.Instance?.DoorOpened();
 
-        Debug.Log($"✅ Door '{doorID}' opened.");
+        Debug.Log($"✅ Door '{doorID}' opened. Points awarded: {awardPoints}");
     }
 
     public void CloseDoor()
