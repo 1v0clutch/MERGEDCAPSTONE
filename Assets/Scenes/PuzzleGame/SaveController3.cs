@@ -35,7 +35,7 @@ public class SaveController3 : MonoBehaviour
         Debug.Log("✅ Minigame save merged: " + JsonUtility.ToJson(saveData));
 
         // ✅ Prevent global state from messing with next door
-        MinigameState.MinigameCompleted = false;
-        MinigameState.CurrentDoorID = null;
+        //MinigameState.MinigameCompleted = false;
+       // MinigameState.CurrentDoorID = null;
     }
 }

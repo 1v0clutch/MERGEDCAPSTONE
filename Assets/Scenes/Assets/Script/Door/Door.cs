@@ -15,13 +15,13 @@ public class Door : MonoBehaviour
 
     public void OpenDoor()
     {
-        // Your animation/disable collider logic here
+        gameObject.SetActive(false);
         Debug.Log($"✅ Door '{doorID}' opened.");
     }
 
     public void CloseDoor()
     {
-        // Your animation/enable collider logic here
+        gameObject.SetActive(true);
         Debug.Log($"🔒 Door '{doorID}' closed.");
     }
 }

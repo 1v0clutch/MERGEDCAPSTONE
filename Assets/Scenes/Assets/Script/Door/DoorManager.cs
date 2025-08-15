@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using System.IO;
 public class DoorManager : MonoBehaviour
 {
     public static DoorManager Instance;
@@ -24,7 +24,7 @@ public class DoorManager : MonoBehaviour
     // State tracking
     private string currentSignDoorID;
     private List<string> currentSignScenes;
-    private GameObject currentPlayer;
+    private GameObject player;
 
     private void Awake()
     {
@@ -56,14 +56,14 @@ public class DoorManager : MonoBehaviour
     {
         currentSignDoorID = doorID;
         currentSignScenes = scenes;
-        currentPlayer = player;
+        this.player = player;
     }
 
     public void ClearActiveSign()
     {
         currentSignDoorID = null;
         currentSignScenes = null;
-        currentPlayer = null;
+        player = null;
     }
 
     public void ShowInteractButton(bool show)
@@ -79,7 +79,9 @@ public class DoorManager : MonoBehaviour
             Debug.LogWarning("⚠ No active sign to interact with.");
             return;
         }
-        StartMinigameForDoor(currentSignDoorID, currentPlayer, currentSignScenes);
+        MinigameState.ReturnPosition = player.transform.position;
+        FindObjectOfType<SaveController>()?.SaveGame();
+        StartMinigameForDoor(currentSignDoorID, player, currentSignScenes);
     }
 
     public void StartMinigameForDoor(string doorID, GameObject player, List<string> scenes)
@@ -120,6 +122,7 @@ public class DoorManager : MonoBehaviour
     }
     public void InitializeDoorsFromState()
     {
+        // ✅ Open all doors that have been completed
         foreach (var data in allDoors)
         {
             if (MinigameState.CompletedDoors.Contains(data.doorID))
@@ -128,4 +131,5 @@ public class DoorManager : MonoBehaviour
                 data.doorObject.CloseDoor();
         }
     }
+
 }

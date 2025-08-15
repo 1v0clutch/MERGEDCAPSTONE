@@ -56,6 +56,8 @@ public class GameControl : MonoBehaviour
     private void ExitToLevel(bool won)
     {
         DoorManager.Instance.FinishMinigame(won);
+        FindObjectOfType<SaveController3>()?.SaveGame();
+        SceneManager.LoadScene("Level 1");
     }
 
 

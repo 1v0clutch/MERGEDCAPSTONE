@@ -35,7 +35,7 @@ public class SaveController2 : MonoBehaviour
         Debug.Log("✅ Minigame save merged with existing data: " + JsonUtility.ToJson(saveData));
 
         // Reset after save so it doesn't interfere with the next door
-        MinigameState.MinigameCompleted = false;
-        MinigameState.CurrentDoorID = null;
+        //MinigameState.MinigameCompleted = false;
+        //MinigameState.CurrentDoorID = null;
     }
 }
