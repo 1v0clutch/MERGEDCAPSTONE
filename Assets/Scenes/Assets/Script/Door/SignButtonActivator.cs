@@ -10,7 +10,7 @@ public class SignButtonActivator : MonoBehaviour
 
     private void Start()
     {
-        DoorManager.Instance?.RegisterSign(signID, this);
+        //DoorManager.Instance?.RegisterSign(signID, this);
         player = GameObject.FindGameObjectWithTag("Player");
     }
 

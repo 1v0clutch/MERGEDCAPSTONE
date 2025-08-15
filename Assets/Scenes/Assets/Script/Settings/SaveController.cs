@@ -15,7 +15,7 @@ public class SaveController : MonoBehaviour
     void Start()
     {
         saveLocation = Path.Combine(Application.persistentDataPath, "saveData.json");
-        PointController.Instance.SetTotalPoints(0);
+        
         inventoryController = FindObjectOfType<InventoryController>();
         inventoryController.InitializeInventory();
 
@@ -28,6 +28,7 @@ public class SaveController : MonoBehaviour
         else
         {
             inventoryController.ClearInventorySlots();
+            PointController.Instance.SetTotalPoints(0);
         }
 
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
