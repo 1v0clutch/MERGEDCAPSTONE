@@ -8,6 +8,6 @@ public static class MinigameState
 
     public static string CurrentDoorID = null;
     public static Vector3 ReturnPosition;
-
+    public static string LastCompletedDoorID; // new
     public static HashSet<string> CompletedDoors = new HashSet<string>();
 }

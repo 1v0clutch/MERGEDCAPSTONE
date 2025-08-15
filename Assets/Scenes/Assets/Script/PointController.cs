@@ -72,7 +72,7 @@ public class PointController : MonoBehaviour
     {
         AddPoints(pointsPerDoorOpened);
     }
-
+ 
     private void UpdateUI()
     {
         if (pointsText != null)

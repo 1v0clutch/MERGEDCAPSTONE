@@ -111,12 +111,10 @@ public class DoorManager : MonoBehaviour
         if (won && !string.IsNullOrEmpty(MinigameState.CurrentDoorID))
         {
             var doorID = MinigameState.CurrentDoorID;
-
-            // ✅ Only open & award points if the door hasn't been completed before
             var isNewDoor = !MinigameState.CompletedDoors.Contains(doorID);
 
             var doorData = allDoors.Find(d => d.doorID == doorID);
-            if (doorData != null && doorData.doorObject != null) // ✅ check if destroyed
+            if (doorData != null && doorData.doorObject != null)
             {
                 doorData.doorObject.OpenDoor(isNewDoor);
             }
@@ -124,9 +122,11 @@ public class DoorManager : MonoBehaviour
             {
                 Debug.LogWarning($"Door '{doorID}' was not found or has been destroyed — skipping OpenDoor()");
             }
+
             if (isNewDoor)
             {
                 MinigameState.CompletedDoors.Add(doorID);
+                MinigameState.LastCompletedDoorID = doorID; // ✅ mark for skip-on-restore
             }
         }
 
@@ -134,15 +134,26 @@ public class DoorManager : MonoBehaviour
         SceneManager.LoadScene(mainLevelSceneName);
     }
 
+
     public void InitializeDoorsFromState()
     {
         foreach (var data in allDoors)
         {
             if (MinigameState.CompletedDoors.Contains(data.doorID))
-                data.doorObject.OpenDoor(false); // No points
+            {
+                // Skip restore log for the most recently completed door
+                bool skipLog = data.doorID == MinigameState.LastCompletedDoorID;
+                data.doorObject.OpenDoor(false, logRestore: !skipLog);
+            }
             else
+            {
                 data.doorObject.CloseDoor();
+            }
         }
+
+        // Clear last completed door after initialization so it won't persist
+        MinigameState.LastCompletedDoorID = null;
     }
+
 
 }

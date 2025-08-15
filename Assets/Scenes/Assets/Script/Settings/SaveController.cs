@@ -97,7 +97,7 @@ public class SaveController : MonoBehaviour
 
         SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(saveLocation));
 
-        AwardPointsForNewDoors(saveData.completedDoorIDs);
+        SyncCompletedDoors(saveData.completedDoorIDs);
         PointController.Instance.SetTotalPoints(saveData.totalPoints);
         // Destroy existing enemies
         foreach (Enemy e in FindObjectsOfType<Enemy>())
@@ -174,18 +174,17 @@ public class SaveController : MonoBehaviour
         }
 
     }
-    private void AwardPointsForNewDoors(List<string> savedCompletedDoors)
+    private void SyncCompletedDoors(List<string> savedCompletedDoors)
     {
         if (MinigameState.CompletedDoors == null)
             MinigameState.CompletedDoors = new HashSet<string>();
 
         foreach (var doorID in savedCompletedDoors)
         {
+            // Just sync state, no new points here
             if (!MinigameState.CompletedDoors.Contains(doorID))
             {
-                // This door was completed in save but not yet counted in session
                 MinigameState.CompletedDoors.Add(doorID);
-                PointController.Instance?.DoorOpened();
             }
         }
     }

@@ -13,17 +13,11 @@ public class Door : MonoBehaviour
         DoorManager.Instance?.RegisterDoor(this);
     }
 
-    public void OpenDoor(bool awardPoints = true)
+    public void OpenDoor(bool awardPoints = true, bool logRestore = false)
     {
-        // Prevent re-awarding points for doors already completed
-        bool isNewDoor = !MinigameState.CompletedDoors.Contains(doorID);
-
         gameObject.SetActive(false);
-
         PointController.Instance?.DoorOpened();
-     
-
-        Debug.Log($"✅ Door '{doorID}' opened. Points awarded: {awardPoints && isNewDoor}");
+        MinigameState.CompletedDoors.Add(doorID);
     }
 
 
