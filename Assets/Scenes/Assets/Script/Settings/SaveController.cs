@@ -15,7 +15,7 @@ public class SaveController : MonoBehaviour
     void Start()
     {
         saveLocation = Path.Combine(Application.persistentDataPath, "saveData.json");
-        
+
         inventoryController = FindObjectOfType<InventoryController>();
         inventoryController.InitializeInventory();
 
@@ -42,7 +42,7 @@ public class SaveController : MonoBehaviour
         }
 
         // ✅ Apply "return from minigame" logic ONLY if last door was completed
-        
+
 
         GameState.IsGameInitialized = true;
         DoorManager.Instance?.InitializeDoorsFromState();
@@ -97,6 +97,7 @@ public class SaveController : MonoBehaviour
 
         SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(saveLocation));
 
+        AwardPointsForNewDoors(saveData.completedDoorIDs);
         PointController.Instance.SetTotalPoints(saveData.totalPoints);
         // Destroy existing enemies
         foreach (Enemy e in FindObjectsOfType<Enemy>())
@@ -172,5 +173,20 @@ public class SaveController : MonoBehaviour
             }
         }
 
+    }
+    private void AwardPointsForNewDoors(List<string> savedCompletedDoors)
+    {
+        if (MinigameState.CompletedDoors == null)
+            MinigameState.CompletedDoors = new HashSet<string>();
+
+        foreach (var doorID in savedCompletedDoors)
+        {
+            if (!MinigameState.CompletedDoors.Contains(doorID))
+            {
+                // This door was completed in save but not yet counted in session
+                MinigameState.CompletedDoors.Add(doorID);
+                PointController.Instance?.DoorOpened();
+            }
+        }
     }
 }

@@ -28,10 +28,29 @@ public class DoorManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            SceneManager.sceneLoaded += OnSceneLoaded; // ✅ listen for scene loads
         }
         else
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == mainLevelSceneName)
+        {
+            // Clear null door references
+            allDoors.RemoveAll(d => d.doorObject == null);
+
+            // Re-register all doors in the scene
+            foreach (var door in FindObjectsOfType<Door>())
+            {
+                RegisterDoor(door);
+            }
+
+            // Apply open/close state
+            InitializeDoorsFromState();
         }
     }
 
@@ -91,11 +110,23 @@ public class DoorManager : MonoBehaviour
     {
         if (won && !string.IsNullOrEmpty(MinigameState.CurrentDoorID))
         {
-            bool isNewDoor = !MinigameState.CompletedDoors.Contains(MinigameState.CurrentDoorID);
+            var doorID = MinigameState.CurrentDoorID;
+
+            // ✅ Only open & award points if the door hasn't been completed before
+            var isNewDoor = !MinigameState.CompletedDoors.Contains(doorID);
+
+            var doorData = allDoors.Find(d => d.doorID == doorID);
+            if (doorData != null && doorData.doorObject != null) // ✅ check if destroyed
+            {
+                doorData.doorObject.OpenDoor(isNewDoor);
+            }
+            else
+            {
+                Debug.LogWarning($"Door '{doorID}' was not found or has been destroyed — skipping OpenDoor()");
+            }
             if (isNewDoor)
             {
-                MinigameState.CompletedDoors.Add(MinigameState.CurrentDoorID);
-                PointController.Instance?.DoorOpened();
+                MinigameState.CompletedDoors.Add(doorID);
             }
         }
 
@@ -108,9 +139,10 @@ public class DoorManager : MonoBehaviour
         foreach (var data in allDoors)
         {
             if (MinigameState.CompletedDoors.Contains(data.doorID))
-                data.doorObject.OpenDoor(); // open but no points
+                data.doorObject.OpenDoor(false); // No points
             else
                 data.doorObject.CloseDoor();
         }
     }
+
 }

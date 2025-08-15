@@ -59,6 +59,7 @@ public class GameControl : MonoBehaviour
         DoorManager.Instance.FinishMinigame(won);
         FindObjectOfType<SaveController3>()?.SaveGame();
         SceneManager.LoadScene("Level 1");
+        DoorManager.Instance.InitializeDoorsFromState();
     }
 
 
