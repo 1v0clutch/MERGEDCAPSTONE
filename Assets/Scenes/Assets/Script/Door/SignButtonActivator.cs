@@ -10,7 +10,6 @@ public class SignButtonActivator : MonoBehaviour
 
     private void Start()
     {
-        //DoorManager.Instance?.RegisterSign(signID, this);
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -18,9 +17,12 @@ public class SignButtonActivator : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // ❌ Don't activate if door already completed
+            // ✅ Don't show interact button if door is already completed
             if (MinigameState.CompletedDoors.Contains(linkedDoorID))
+            {
+                Debug.Log($"🚫 Door {linkedDoorID} already completed - sign inactive");
                 return;
+            }
 
             DoorManager.Instance.SetActiveSign(linkedDoorID, minigameScenes, player);
             DoorManager.Instance.ShowInteractButton(true);

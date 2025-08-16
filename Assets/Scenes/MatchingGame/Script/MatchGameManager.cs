@@ -1,3 +1,4 @@
+// ===== UPDATED MATCHGAMEMANAGER.CS =====
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,14 +7,14 @@ using UnityEngine.SceneManagement;
 public class MatchGameManager : MonoBehaviour
 {
     [SerializeField] private int maxAttempts = 3;
-    [SerializeField] private GameObject gamePanelToDisable; // Optional UI/parent object to close/hide
+    [SerializeField] private GameObject gamePanelToDisable;
     private int attemptsLeft;
-
     private List<MatchConnection> connections = new List<MatchConnection>();
 
     private void Start()
     {
         attemptsLeft = maxAttempts;
+        Debug.Log($"🎮 MatchGameManager started. Current door ID: {MinigameState.CurrentDoorID}");
 
         foreach (ObjectMatchingGame obj in FindObjectsOfType<ObjectMatchingGame>())
             obj.Unlock();
@@ -23,7 +24,6 @@ public class MatchGameManager : MonoBehaviour
 
     public void AddConnection(ObjectMatchingGame source, ObjectMatchform target, LineRenderer line)
     {
-        // 🛑 Do not allow connections to locked cards
         if (source.IsLocked || target.IsLocked)
         {
             Debug.Log("⛔ This card is locked and cannot be reconnected.");
@@ -31,14 +31,12 @@ public class MatchGameManager : MonoBehaviour
             return;
         }
 
-        // Remove any existing connections from this source or target
         for (int i = connections.Count - 1; i >= 0; i--)
         {
             if (connections[i].source == source || connections[i].target == target)
             {
                 if (connections[i].line != null)
                     Destroy(connections[i].line.gameObject);
-
                 connections.RemoveAt(i);
             }
         }
@@ -46,13 +44,12 @@ public class MatchGameManager : MonoBehaviour
         connections.Add(new MatchConnection(source, target, line));
     }
 
-
     public void CheckConnections()
     {
         if (attemptsLeft <= 0)
         {
             Debug.Log("❌ No attempts left. Game Over!");
-            ExitToLevel(false); // force fail
+            ExitToLevel(false);
             return;
         }
 
@@ -89,12 +86,12 @@ public class MatchGameManager : MonoBehaviour
         if (won)
         {
             Debug.Log("🎉 All matches correct!");
-            ExitToLevel(true); // success
+            ExitToLevel(true);
         }
         else if (attemptsLeft <= 0)
         {
             Debug.Log("❌ Attempts exhausted, returning to level.");
-            ExitToLevel(false); // fail
+            ExitToLevel(false);
         }
         else
         {
@@ -106,7 +103,6 @@ public class MatchGameManager : MonoBehaviour
     {
         int totalPairs = FindObjectsOfType<ObjectMatchingGame>().Length;
         
-        // If we don't have enough correct matches, return false
         if (connections.Count < totalPairs)
             return false;
 
@@ -122,11 +118,47 @@ public class MatchGameManager : MonoBehaviour
         }
         connections.Clear();
     }
+
     private void ExitToLevel(bool won)
     {
-        DoorManager.Instance.FinishMinigame(won);
-        FindObjectOfType<SaveController2>()?.SaveGame();
+        Debug.Log($"🎯 MatchGameManager exiting with won: {won}, door: {MinigameState.CurrentDoorID}");
+        
+        // ✅ Mark completion in static state
+        if (won && !string.IsNullOrEmpty(MinigameState.CurrentDoorID))
+        {
+            bool isNewCompletion = !MinigameState.CompletedDoors.Contains(MinigameState.CurrentDoorID);
+            Debug.Log($"🔍 Is new completion: {isNewCompletion}");
+            
+            if (isNewCompletion)
+            {
+                MinigameState.CompletedDoors.Add(MinigameState.CurrentDoorID);
+                MinigameState.PendingPoints = 200; // Set your door points value
+                MinigameState.PendingRewardDoorID = MinigameState.CurrentDoorID;
+                
+                Debug.Log($"🎉 NEW COMPLETION! Set pending: {MinigameState.PendingPoints} points for door {MinigameState.CurrentDoorID}");
+            }
+            else
+            {
+                Debug.Log($"🔄 Door {MinigameState.CurrentDoorID} already completed - no points set");
+                MinigameState.PendingPoints = 0; // Make sure no points for repeat
+            }
+            
+            MinigameState.MinigameCompleted = true;
+            MinigameState.DoorShouldBeOpen = true;
+        }
+
+        var saveController = FindObjectOfType<SaveController2>();
+        if (saveController != null)
+        {
+            saveController.SaveGame();
+            Debug.Log("💾 Game saved via SaveController2");
+        }
+        else
+        {
+            Debug.LogWarning("⚠️ No SaveController2 found");
+        }
+        
+        Debug.Log($"🏠 Loading Level 1. Pending points: {MinigameState.PendingPoints}");
         SceneManager.LoadScene("Level 1");
-        DoorManager.Instance.InitializeDoorsFromState();
     }
 }

@@ -1,3 +1,4 @@
+// ===== UPDATED GAMECONTROL.CS =====
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,6 +13,7 @@ public class GameControl : MonoBehaviour
     {
         winText.SetActive(false);
         youWin = false;
+        Debug.Log($"🎮 GameControl started. Current door ID: {MinigameState.CurrentDoorID}");
     }
 
     private void Update()
@@ -20,7 +22,7 @@ public class GameControl : MonoBehaviour
         {
             youWin = true;
             winText.SetActive(true);
-
+            Debug.Log("🎉 Puzzle completed!");
             HandlePuzzleCompleted();
         }
     }
@@ -37,31 +39,50 @@ public class GameControl : MonoBehaviour
 
     private void HandlePuzzleCompleted()
     {
-        // Mark the minigame state
-        MinigameState.MinigameCompleted = true;
-        MinigameState.DoorShouldBeOpen = true;
-        MinigameState.CompletedDoors.Add(MinigameState.CurrentDoorID);
+        Debug.Log($"🎯 Handling puzzle completion for door: {MinigameState.CurrentDoorID}");
+        
+        // ✅ Mark completion in static state
+        if (!string.IsNullOrEmpty(MinigameState.CurrentDoorID))
+        {
+            bool isNewCompletion = !MinigameState.CompletedDoors.Contains(MinigameState.CurrentDoorID);
+            Debug.Log($"🔍 Is new completion: {isNewCompletion}");
+            
+            if (isNewCompletion)
+            {
+                MinigameState.CompletedDoors.Add(MinigameState.CurrentDoorID);
+                MinigameState.PendingPoints = 200; // Set your door points value
+                MinigameState.PendingRewardDoorID = MinigameState.CurrentDoorID;
+                
+                Debug.Log($"🎉 NEW COMPLETION! Set pending: {MinigameState.PendingPoints} points for door {MinigameState.CurrentDoorID}");
+            }
+            else
+            {
+                Debug.Log($"🔄 Door {MinigameState.CurrentDoorID} already completed - no points set");
+                MinigameState.PendingPoints = 0; // Make sure no points are set for repeat
+            }
+            
+            MinigameState.MinigameCompleted = true;
+            MinigameState.DoorShouldBeOpen = true;
+        }
+        else
+        {
+            Debug.LogError("❌ No CurrentDoorID set!");
+        }
 
-        // Save using SaveController2 in this scene
-        var saveController = FindObjectOfType<SaveController2>();
+        // Save and return
+        var saveController = FindObjectOfType<SaveController3>();
         if (saveController != null)
         {
             saveController.SaveGame();
+            Debug.Log("💾 Game saved via SaveController3");
         }
-
-        // Return to main level
-        ExitToLevel(true);
-    }
-
-    private void ExitToLevel(bool won)
-    {
-
-        DoorManager.Instance.FinishMinigame(won);
-        FindObjectOfType<SaveController3>()?.SaveGame();
+        else
+        {
+            Debug.LogWarning("⚠️ No SaveController3 found");
+        }
+        
+        Debug.Log($"🏠 Loading Level 1. Pending points: {MinigameState.PendingPoints}");
         SceneManager.LoadScene("Level 1");
-        DoorManager.Instance.InitializeDoorsFromState();
     }
-
-
-
 }
+

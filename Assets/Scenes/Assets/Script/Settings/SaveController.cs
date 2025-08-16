@@ -44,13 +44,14 @@ public class SaveController : MonoBehaviour
         // ✅ Apply "return from minigame" logic ONLY if last door was completed
 
 
-        GameState.IsGameInitialized = true;
+
         DoorManager.Instance?.InitializeDoorsFromState();
 
         if (!File.Exists(saveLocation))
         {
             SaveGame();
         }
+        GameState.IsGameInitialized = true;
     }
 
     public void SaveGame()
@@ -67,7 +68,7 @@ public class SaveController : MonoBehaviour
             questionEnemyPositions = new List<Vector3>(),
             completedDoorIDs = new List<string>(MinigameState.CompletedDoors),
             gemCount = gemCounter.GetGemCount(),
-            totalPoints = PointController.Instance.TotalPoints
+            totalPoints = PointController.Instance != null ? PointController.Instance.TotalPoints : 0
         };
 
         // Save enemy positions
@@ -87,7 +88,7 @@ public class SaveController : MonoBehaviour
         }
 
         File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData, true));
-        Debug.Log("💾 Game Saved.");
+        Debug.Log($"💾 Game Saved. TotalPoints={saveData.totalPoints}");
 
     }
 
@@ -98,7 +99,22 @@ public class SaveController : MonoBehaviour
         SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(saveLocation));
 
         SyncCompletedDoors(saveData.completedDoorIDs);
-        PointController.Instance.SetTotalPoints(saveData.totalPoints);
+        if (MinigameState.PendingPoints > 0 && PointController.Instance != null)
+        {
+            Debug.Log($"🏆 Applying {MinigameState.PendingPoints} pending points!");
+            saveData.totalPoints += MinigameState.PendingPoints;
+            MinigameState.PendingPoints = 0;
+        }
+
+        if (PointController.Instance != null)
+        {
+            PointController.Instance.SetTotalPoints(saveData.totalPoints);
+        }
+        else
+        {
+            Debug.LogError("❌ PointController.Instance missing during LoadGame!");
+        }
+        
         // Destroy existing enemies
         foreach (Enemy e in FindObjectsOfType<Enemy>())
             Destroy(e.gameObject);
@@ -181,11 +197,15 @@ public class SaveController : MonoBehaviour
 
         foreach (var doorID in savedCompletedDoors)
         {
-            // Just sync state, no new points here
+            // If the door wasn't already completed, add it
             if (!MinigameState.CompletedDoors.Contains(doorID))
             {
                 MinigameState.CompletedDoors.Add(doorID);
+
+                // 🚫 DO NOT give points here, because this is a restore
+                // Points are only awarded when the minigame is *first* won
             }
         }
     }
+
 }

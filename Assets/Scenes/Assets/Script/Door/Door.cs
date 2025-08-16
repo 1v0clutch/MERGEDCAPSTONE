@@ -13,17 +13,29 @@ public class Door : MonoBehaviour
         DoorManager.Instance?.RegisterDoor(this);
     }
 
-    public void OpenDoor(bool awardPoints = true, bool logRestore = false)
+    public void OpenDoor(bool fromSave = false)
     {
-        gameObject.SetActive(false);
-        PointController.Instance?.DoorOpened();
-        MinigameState.CompletedDoors.Add(doorID);
+        if (this != null && gameObject != null)
+        {
+            gameObject.SetActive(false); // purely visual
+            Debug.Log($"🚪 Door {doorID} opened. FromSave? {fromSave}");
+
+            if (!fromSave && PointController.Instance != null)
+            {
+                PointController.Instance.DoorOpened();
+                Debug.Log($"🎉 Awarded points for door {doorID}");
+            }
+        }
     }
+
 
 
     public void CloseDoor()
     {
-        gameObject.SetActive(true);
-        Debug.Log($"🔒 Door '{doorID}' closed.");
+        if (this != null && gameObject != null)
+        {
+            gameObject.SetActive(true);
+            Debug.Log($"🔒 Door '{doorID}' closed.");
+        }
     }
 }
