@@ -99,21 +99,15 @@ public class SaveController : MonoBehaviour
         SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(saveLocation));
 
         SyncCompletedDoors(saveData.completedDoorIDs);
-        if (MinigameState.PendingPoints > 0 && PointController.Instance != null)
-        {
-            Debug.Log($"🏆 Applying {MinigameState.PendingPoints} pending points!");
-            saveData.totalPoints += MinigameState.PendingPoints;
-            MinigameState.PendingPoints = 0;
-        }
 
         if (PointController.Instance != null)
         {
-            PointController.Instance.SetTotalPoints(saveData.totalPoints);
+            // ✅ Take max so we never lose freshly awarded points
+            int finalPoints = Mathf.Max(PointController.Instance.TotalPoints, saveData.totalPoints);
+            PointController.Instance.SetTotalPoints(finalPoints);
+            Debug.Log($"💾 Restored points = {finalPoints}");
         }
-        else
-        {
-            Debug.LogError("❌ PointController.Instance missing during LoadGame!");
-        }
+
         
         // Destroy existing enemies
         foreach (Enemy e in FindObjectsOfType<Enemy>())

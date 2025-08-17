@@ -15,17 +15,16 @@ public class Door : MonoBehaviour
 
     public void OpenDoor(bool fromSave = false)
     {
-        if (this != null && gameObject != null)
-        {
-            gameObject.SetActive(false); // purely visual
-            Debug.Log($"🚪 Door {doorID} opened. FromSave? {fromSave}");
 
-            if (!fromSave && PointController.Instance != null)
-            {
-                PointController.Instance.DoorOpened();
-                Debug.Log($"🎉 Awarded points for door {doorID}");
-            }
+        gameObject.SetActive(false); // purely visual
+        Debug.Log($"🚪 Door {doorID} opened. FromSave? {fromSave}");
+
+        if (!fromSave && PointController.Instance != null)
+        {
+            PointController.Instance.DoorOpened();
+            Debug.Log($"🎉 Awarded points for door {doorID}");
         }
+
     }
 
 

@@ -123,7 +123,9 @@ public class DoorManager : MonoBehaviour
     public void RegisterDoor(Door door)
     {
         if (!allDoors.Exists(d => d.doorID == door.DoorID))
+        {
             allDoors.Add(new DoorData { doorID = door.DoorID, doorObject = door });
+        }    
     }
 
     public void SetActiveSign(string doorID, List<string> scenes, GameObject player)
@@ -183,7 +185,7 @@ public class DoorManager : MonoBehaviour
 
             if (MinigameState.CompletedDoors.Contains(data.doorID))
             {
-                data.doorObject.OpenDoor();
+                data.doorObject.OpenDoor(true);
                 Debug.Log($"🔓 Opened door {data.doorID} (visual only)");
             }
             else
