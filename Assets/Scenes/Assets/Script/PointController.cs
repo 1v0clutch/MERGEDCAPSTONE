@@ -148,17 +148,10 @@ public class PointController : MonoBehaviour
         if (found != null)
         {
             pointsText = found.GetComponent<TextMeshProUGUI>();
-            Debug.Log($"🔄 Rebound UI to {pointsText.gameObject.name} (by name)");
+            pointsText.text = $"Points: {TotalPoints}";
             return;
         }
 
-        var tmp = Object.FindObjectOfType<TextMeshProUGUI>();
-        if (tmp != null)
-        {
-            pointsText = tmp;
-            Debug.Log($"🔄 Rebound UI to {pointsText.gameObject.name} (by type)");
-            return;
-        }
 
         Debug.LogWarning("⚠️ Could not find any PointsText in this scene.");
     }

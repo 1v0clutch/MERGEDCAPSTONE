@@ -37,7 +37,7 @@ public class ItemDictionary : MonoBehaviour
         itemDictionary.TryGetValue(itemID, out GameObject prefab);
         if(prefab == null)
         {
-            Debug.LogWarning($"Item with ID {itemID} not found in dictionary");
+            //Debug.LogWarning($"Item with ID {itemID} not found in dictionary");
         }
         return prefab;
     }

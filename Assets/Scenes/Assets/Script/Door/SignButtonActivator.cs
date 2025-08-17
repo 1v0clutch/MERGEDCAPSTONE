@@ -11,6 +11,17 @@ public class SignButtonActivator : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+
+        Collider2D myCollider = GetComponent<Collider2D>();
+        if (player != null && myCollider.bounds.Contains(player.transform.position))
+        {
+            if (!MinigameState.CompletedDoors.Contains(linkedDoorID))
+            {
+                DoorManager.Instance.SetActiveSign(linkedDoorID, minigameScenes, player);
+                DoorManager.Instance.ShowInteractButton(true);
+                Debug.Log($"🔄 Player started inside sign {signID}, re-activated interact button.");
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
